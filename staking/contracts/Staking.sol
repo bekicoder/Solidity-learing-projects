@@ -14,7 +14,6 @@ interface IERC20 {
 /// @notice Reward calculation library
 library RewardMath {
     uint256 internal constant PRECISION = 1e18;
-
     function rewardPerToken(
         uint256 rewardRate,
         uint256 lastUpdateTime,
