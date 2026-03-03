@@ -4,7 +4,6 @@ pragma solidity ^0.8.20;
 
 contract test {
     uint count = 1;
-
     function increment() external {
         count++;
     }
