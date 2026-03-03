@@ -53,7 +53,6 @@ contract SimpleStaking {
 
         uint256 reward = rewards[msg.sender];
         rewards[msg.sender] = 0;
-
         // here we would transfer reward token
     }
 }
