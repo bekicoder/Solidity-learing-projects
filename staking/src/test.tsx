@@ -1,15 +1,16 @@
 import {ethers} from "ethers"
 import {useState,useEffect} from "react"
 export default function Test() {
-    const CONTRACT_ADDRESS = "0x0165878A594ca255338adfa4d48449f69242Eb8F"
+    const CONTRACT_ADDRESS = "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0"
     const ABI = [
-        "function inremment()",
+        "function increment()",
         "function getCount() view returns(uint256)"
     ]
     const [account,setAccount] = useState<string>("")
     const [provider,setProvider] = useState<ethers.windowProvider | null>(null)
     const [signer,setSigner] = useState<ethers.JsonRpcSigner | null>(null)
     const [contract,setContract] = useState<ethers.Contract>(null)
+    const [count,setCount] = useState<string>()
 
     const connectWallet = async()=>{
         if(!window.ethereum){
@@ -27,13 +28,26 @@ export default function Test() {
     }
 
     const increment = async()=>{
-
+        if(contract){
+        const increase = await contract.increment()
+        await increase.wait()
+        console.log("successfull")
+        }
+    }
+    const getCount = async()=>{
+        if(contract){
+            const count = await contract.getCount()
+            console.log(count)
+        }
     }
   return (
     <div>
     <div>
     <p>{account}</p>
     <button onClick={connectWallet}>Connect</button>
+    <p></p>
+    <button onClick={increment}>Incremment</button>
+    <button onClick={getCount}>Get</button>
     </div>
     </div>
   )
