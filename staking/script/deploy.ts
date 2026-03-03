@@ -14,7 +14,7 @@ async function main() {
   // 🔹 Example: 1 token per second (assuming 18 decimals)
   const REWARD_RATE = ethers.parseUnits("1", 18);
 
-  const Staking = await ethers.getContractFactory("Staking");
+  const Staking = await ethers.getContractFactory("SimpleStaking");
 
   const staking = await Staking.deploy(
     STAKING_TOKEN,

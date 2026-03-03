@@ -93,7 +93,7 @@ contract Staking is ReentrancyGuard {
     }
 
     /*//////////////////////////////////////////////////////////////
-                          INTERNAL UPDATE
+                          INTERNAL UPDATE   
     //////////////////////////////////////////////////////////////*/
 
     function _updateReward(address account) internal {
