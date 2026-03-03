@@ -38,7 +38,6 @@ function App() {
   // Stake
   const stake = async () => {
     if (!contract || !amount) return;
-   console.log(amount,"this is the main thing that you have to do")
    try{
     const tx = await contract.stake(
       ethers.parseUnits(amount, 18)

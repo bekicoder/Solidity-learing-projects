@@ -37,7 +37,7 @@ export default function Test() {
     const getCount = async()=>{
         if(contract){
             const count = await contract.getCount()
-            console.log(count)
+            console.log(Number(count))
         }
     }
   return (

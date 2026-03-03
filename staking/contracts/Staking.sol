@@ -123,7 +123,6 @@ contract Staking is ReentrancyGuard {
     //////////////////////////////////////////////////////////////*/
 
     function stake(uint256 amount) external nonReentrant {
-        console.log("this is the best and the must important",amount);
         if (amount == 0) revert ZeroAmount();
 
         _updateReward(msg.sender);
